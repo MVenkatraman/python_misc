@@ -47,7 +47,7 @@ def get_seq(rand, fastafile):
     for r in rand:
         seqid = fastafile[r].id
         seq = fastafile[r].seq  
-        sub = ">" + str(seqid) + "\t" + str(seq) + "\n"
+        sub = ">" + str(seqid) + "\n" + str(seq) + "\n"
         subsample = subsample + sub
     return subsample
 
