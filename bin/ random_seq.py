@@ -59,7 +59,7 @@ def main():
     count = SeqIO.convert(infasta, "fasta" , "input.txt", "tab")
     infasta.close()
     infasta2 = open("{0}".format(args.input_fasta), 'rU')
-    fastafile = list(SeqIO.parse(infasta2, "fasta"))  #here is the problem
+    fastafile = list(SeqIO.parse(infasta2, "fasta")) 
     rand = random_num(num, count)
     subsample = get_seq(rand, fastafile)
     outfasta.write(subsample)
