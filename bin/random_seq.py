@@ -13,7 +13,7 @@ Usage: python random_seq.py input.fasta output.fasta n
 
 Example: python random_seq.py A15F.fasta A15F_subsample.fasta 100
 
-Notes: Requires Biopython (www.biopython.org)
+Notes: Requires Python 2.7 and Biopython (www.biopython.org)
 
 """
 
@@ -59,7 +59,7 @@ def main():
     count = SeqIO.convert(infasta, "fasta" , "input.txt", "tab")
     infasta.close()
     infasta2 = open("{0}".format(args.input_fasta), 'rU')
-    fastafile = list(SeqIO.parse(infasta2, "fasta")) 
+    fastafile = list(SeqIO.parse(infasta2, "fasta"))
     rand = random_num(num, count)
     subsample = get_seq(rand, fastafile)
     outfasta.write(subsample)
